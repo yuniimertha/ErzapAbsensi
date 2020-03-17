@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:async';
+import 'package:dashboard.dart'
 
 void main() => runApp(MyApp());
 
@@ -31,7 +32,11 @@ class _ScreenState extends State<Screen> {
     Future.delayed(
       Duration(seconds: 3),
       () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => Login(),),
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Login(),
+          ),
         );
       });
   }
