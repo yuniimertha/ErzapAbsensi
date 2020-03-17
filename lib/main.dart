@@ -186,6 +186,12 @@ class _LoginState extends State<Login> {
     print(_urlcontroller.text);
     print(_emcontroller.text);
     if (_checkEmail(_emcontroller.text)) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => Dashboard(),
+        ),
+      );
       return;
     } else {
       print("Succes Login");
