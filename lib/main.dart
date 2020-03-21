@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:async';
-import 'package:dashboard.dart'
+import 'dashboard.dart';
 
 void main() => runApp(MyApp());
 
@@ -186,11 +186,12 @@ class _LoginState extends State<Login> {
     print(_urlcontroller.text);
     print(_emcontroller.text);
     if (_checkEmail(_emcontroller.text)) {
-      Navigator.push(
+      Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
           builder: (context) => Dashboard(),
         ),
+        (Route<dynamic>route) => false
       );
       return;
     } else {
