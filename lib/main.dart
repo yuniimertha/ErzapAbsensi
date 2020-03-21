@@ -11,9 +11,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Login',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: Colors.white,
-      ),
       home: Screen(),
     );
   }
@@ -67,8 +64,6 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-
-
 
   @override
   void initState() {

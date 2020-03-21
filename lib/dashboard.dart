@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:absensi/home.dart';
 import 'package:absensi/listabsen.dart';
 import 'package:absensi/profile.dart';
+import 'package:absensi/report.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -15,6 +16,7 @@ class _DashboardState extends State<Dashboard> {
   final PageHome _home = PageHome();
   final PageAbsen _listabsen = PageAbsen();
   final PageProfile _profile = PageProfile();
+  final PageReport _report = PageReport();
 
   Widget _showPage = PageHome();
 
@@ -27,6 +29,9 @@ class _DashboardState extends State<Dashboard> {
       return _listabsen;
       break;
       case 2:
+      return _report;
+      break;
+      case 3:
       return _profile;
       break;
       default:
@@ -57,21 +62,27 @@ class _DashboardState extends State<Dashboard> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: pageIndex,
+        type: BottomNavigationBarType.fixed,
         items:[
           BottomNavigationBarItem(
-            backgroundColor: Colors.blue,
             icon: Icon(Icons.home),
             title: Text('Home'),
+            backgroundColor: Colors.blue
           ),
            BottomNavigationBarItem(
-            backgroundColor: Colors.blue,
             icon: Icon(Icons.list),
-            title: Text('Riwayat Absen'),
+            title: Text('List Absen'),
+            backgroundColor: Colors.blue
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.assignment),
+            title: Text('Report'),
+            backgroundColor: Colors.blue
           ),
            BottomNavigationBarItem(
-            backgroundColor: Colors.blue,
             icon: Icon(Icons.person),
             title: Text('Profile'),
+            backgroundColor: Colors.blue
           ),
         ],
         onTap: (index){

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'main.dart';
 
 class PageProfile extends StatefulWidget {
   @override
@@ -59,7 +60,14 @@ class _PageProfileState extends State<PageProfile> {
                       color: Colors.blue,
                       elevation: 7.0,
                       child: GestureDetector(
-                        onTap: (){},
+                        onTap: () => {
+                        Navigator.push(
+                          context,
+                        MaterialPageRoute(
+                          builder: (context) => Login(),
+                        ),
+                        ),
+                        },
                         child: Center(
                           child: Text(
                             'Log Out',

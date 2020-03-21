@@ -8,11 +8,10 @@ class PageHome extends StatefulWidget {
 class _PageHomeState extends State<PageHome> {
 
   bool statusmasuk = false;
-  bool statuskeluar = false;
 
   @override
   Widget build(BuildContext context) {
-    return statusmasuk == false && statuskeluar == true ? Container(
+    return statusmasuk == false ? Container(
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -42,7 +41,6 @@ class _PageHomeState extends State<PageHome> {
               ),
             )
     ) : Container(
-      // height: 900.0,
       padding: const EdgeInsets.all(15.0),
       child: Column(
         children: <Widget>[
@@ -59,7 +57,7 @@ class _PageHomeState extends State<PageHome> {
                       RaisedButton(
                       onPressed: (){
                         setState(() {
-                        statuskeluar = true;
+                        statusmasuk = false;
                       });
                       },
                       child: Text("Keluar", style: TextStyle(color: Colors.white)),
